@@ -1,11 +1,9 @@
 package xyz.izen1231.asmr;
 
 import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.OvalShape;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -17,8 +15,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView imageView = (ImageView) findViewById(R.id.user);
-        imageView.setBackground(new ShapeDrawable(new OvalShape()));
+        GradientDrawable drawable=
+                (GradientDrawable) getDrawable(R.drawable.background_rounding);
+        imageView.setBackground(drawable);
         imageView.setClipToOutline(true);
+
 
 
         ActionBar actionBar = getSupportActionBar();
